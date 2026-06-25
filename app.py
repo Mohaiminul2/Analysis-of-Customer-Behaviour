@@ -47,7 +47,10 @@ def load_and_clean_data(file_input):
     df['Customer ID'] = df['Customer ID'].astype(float).astype(int)
     # Remove cancelled orders (Invoice starts with 'C')
     df = df[~df['Invoice'].astype(str).str.startswith('C')]
-    # Remove invalid Quantity or Price
+    # Convert to numeric first, coerce errors to NaN
+    df['Quantity'] = pd.to_numeric(df['Quantity'], errors='coerce')
+    df['Price'] = pd.to_numeric(df['Price'], errors='coerce')
+    # Now filter
     df = df[(df['Quantity'] > 0) & (df['Price'] > 0)]
     # Create TotalPrice
     df['TotalPrice'] = df['Quantity'] * df['Price']
