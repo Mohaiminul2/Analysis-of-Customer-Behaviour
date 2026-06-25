@@ -1,4 +1,4 @@
-# Customer Purchase Behaviour Analytics
+# Analysis-of-Customer-Behaviour
 
 An interactive customer analytics dashboard for understanding purchase behaviour, finding customer segments, estimating churn risk, and predicting future customer value from Online Retail II transaction data.
 
