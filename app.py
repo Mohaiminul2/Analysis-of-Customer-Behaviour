@@ -44,7 +44,7 @@ def load_and_clean_data(file_input):
     df['InvoiceDate'] = pd.to_datetime(df['InvoiceDate'])
     # Drop rows without Customer ID
     df = df.dropna(subset=['Customer ID'])
-    df['Customer ID'] = pd.to_numeric(df['Customer ID'], errors='coerce').astype('Int64')
+    df['Customer ID'] = df['Customer ID'].astype(float).astype(int)
     # Remove cancelled orders (Invoice starts with 'C')
     df = df[~df['Invoice'].astype(str).str.startswith('C')]
     # Remove invalid Quantity or Price
