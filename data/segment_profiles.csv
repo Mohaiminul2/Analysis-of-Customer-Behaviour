@@ -1,0 +1,6 @@
+Segment,Customers,Total_Revenue,Avg_Spend,Avg_Frequency,Avg_Recency,Avg_Churn_Prob,Avg_Future_LTV,Revenue_Share_pct,Customer_Share_pct
+At Risk,1364,1930770.29,1415.52,3.8,291.61,0.59,153.18,10.9,23.2
+Champions,462,9781232.82,21171.5,32.76,18.17,0.06,6563.82,55.1,7.9
+Core Customers,1295,4819756.01,3721.82,9.1,48.94,0.23,1136.16,27.2,22.0
+Low Value,1616,426318.97,263.81,1.25,418.68,0.77,25.73,2.4,27.5
+New Customers,1141,785351.08,688.3,2.5,32.7,0.53,484.72,4.4,19.4
