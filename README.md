@@ -39,23 +39,6 @@ RFM segmentation + churn model + LTV model
 Segment profiles and business recommendations
 ```
 
-
-### Customer Features
-
-Transactions are aggregated to customer level:
-
-| Feature | Meaning |
-| --- | --- |
-| `num_transactions` | Number of unique invoices per customer |
-| `total_spend` | Total customer revenue |
-| `avg_order_value` | Average order value |
-| `std_order_value` | Variation in order value |
-| `total_items` | Total quantity purchased |
-| `first_purchase` | First purchase date |
-| `last_purchase` | Most recent purchase date |
-| `customer_lifetime_days` | Days between first and last purchase |
-| `days_since_last_purchase` | Inactivity period |
-
 ### RFM Segmentation
 
 RFM means:
@@ -149,24 +132,6 @@ The notebook gives a deeper, step-by-step analysis. Use it when you want to stud
 ```bash
 jupyter notebook notebooks/01_customer_behavior_analytics.ipynb
 ```
-
-## Customizing The Project
-
-| Goal | Where to change it |
-| --- | --- |
-| Use a different dataset | Replace `data/online_retail_II.csv` with a file using the required columns |
-| Change churn definition | Update `churn_threshold = 90` in `app.py` |
-| Change default number of dashboard clusters | Update the RFM slider default in `app.py` |
-| Change fixed Segment Profiles cluster count | Update `perform_kmeans_clustering(rfm, 5)` in `compute_segment_profiles()` |
-| Add more model features | Update `train_churn_model()` or `train_ltv_model()` |
-| Change segment recommendations | Edit the logic in the Recommendations section of `app.py` |
-
-## Important Notes
-
-- The project previously had a local `.venv/` folder. That folder is not source code and can be recreated from `requirements.txt`.
-- `data/online_retail_II.csv` is large and is ignored by Git in this working tree. If it is missing, the Streamlit app can attempt to download a Parquet version automatically.
-- The notebook currently expects the CSV file specifically, so manual CSV download may still be needed for notebook-only workflows.
-- Some model results can vary slightly across package versions and machines.
 
 ## Technologies Used
 
